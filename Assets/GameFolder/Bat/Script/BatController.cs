@@ -18,26 +18,27 @@ public class BatController : MonoBehaviour
     {
         if (GetComponent<Character>().life <= 0)
         {
+            GetComponent<AudioSource>().enabled = false;
             GetComponent<CircleCollider2D>().enabled = false;
-            GetComponent<Rigidbody2D>().gravityScale = 0.5f;
+            GetComponent<Rigidbody2D>().gravityScale = 1f;
             Destroy(gameObject, 3f);
             this.enabled = false;
         }
 
 
-        if (Vector2.Distance(transform.position,player.position) > 0.2f)
+        if (Vector2.Distance(transform.position,player.GetComponent<CapsuleCollider2D>().bounds.center) > 0.4f)
         {
             attackTime = 0;
-            transform.position = Vector2.MoveTowards(transform.position,player.position, 0.5f * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.GetComponent<CapsuleCollider2D>().bounds.center, 1.5f * Time.deltaTime);
         }
         else
         {
             attackTime = attackTime + Time.deltaTime;
 
-            if (attackTime >= 1f)
+            if (attackTime >= 0.5f)
             {
                 attackTime = 0;
-                player.GetComponent<Character>().life--;
+                player.GetComponent<Character>().PlayerDamage(5);
             }
         }
     }

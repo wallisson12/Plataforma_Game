@@ -4,31 +4,26 @@ using UnityEngine;
 
 public class BearTrap : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip clip;
+
 
     Transform player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D outro)
     {
         if (outro.CompareTag("Player"))
         {
+            audioSource.PlayOneShot(clip,0.2f);
+
             player = outro.transform;
+
             transform.GetComponentInChildren<Animator>().Play("BearTrap", -1);
 
             outro.transform.position = transform.position;
             outro.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-            outro.GetComponent<Character>().life--;
+            outro.GetComponent<Character>().PlayerDamage(1);
             outro.GetComponent<PlayerController>().skin.GetComponent<Animator>().SetBool("PlayerRun", false);
             outro.GetComponent<PlayerController>().enabled = false;
 

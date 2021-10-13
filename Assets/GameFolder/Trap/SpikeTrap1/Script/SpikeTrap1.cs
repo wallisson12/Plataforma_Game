@@ -21,7 +21,7 @@ public class SpikeTrap1 : MonoBehaviour
         {
             outro.transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             outro.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,150));
-            outro.GetComponent<Character>().life--;
+            outro.GetComponent<Character>().PlayerDamage(1);
         }
     }
 }

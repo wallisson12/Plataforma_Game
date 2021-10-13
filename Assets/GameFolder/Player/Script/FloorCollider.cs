@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class FloorCollider : MonoBehaviour
 {
-   
-    // Start is called before the first frame update
+    AudioSource aud;
+    public AudioClip son;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        aud = GetComponent<AudioSource>();   
     }
 
     private void OnTriggerEnter2D(Collider2D outro)
     {
-       
+        if (outro.CompareTag("Ground"))
+        {
+            aud.PlayOneShot(son,0.5f);
+        }
     }
 }

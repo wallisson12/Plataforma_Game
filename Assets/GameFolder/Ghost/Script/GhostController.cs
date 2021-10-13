@@ -28,7 +28,7 @@ public class GhostController : MonoBehaviour
                 transform.position = a.position;
             }
 
-             transform.position = Vector2.MoveTowards(transform.position,b.position,2f * Time.deltaTime);
+             transform.position = Vector2.MoveTowards(transform.position,b.position,15f * Time.deltaTime);
 
         }else
         {
@@ -39,7 +39,7 @@ public class GhostController : MonoBehaviour
                 transform.position = b.position;
             }
 
-             transform.position = Vector2.MoveTowards(transform.position,a.position,2f * Time.deltaTime);
+             transform.position = Vector2.MoveTowards(transform.position,a.position,13f * Time.deltaTime);
         }
     }
 
@@ -47,7 +47,7 @@ public class GhostController : MonoBehaviour
     {
         if (outro.CompareTag("Player"))
         {
-            outro.GetComponent<Character>().life--;
+            outro.GetComponent<Character>().PlayerDamage(1);
         }
     }
 }

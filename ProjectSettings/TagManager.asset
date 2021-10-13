@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Floor
   - Enemy
+  - Ground
+  - Spawn
   layers:
   - Default
   - TransparentFX
@@ -16,8 +18,8 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
+  - Bat
+  - PlayerAttackCollider
   - 
   - 
   - 
@@ -51,4 +53,7 @@ TagManager:
     locked: 0
   - name: Front
     uniqueID: 2446538869
+    locked: 0
+  - name: Transition
+    uniqueID: 3324943885
     locked: 0

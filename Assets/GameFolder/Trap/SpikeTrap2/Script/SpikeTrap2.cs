@@ -20,7 +20,7 @@ public class SpikeTrap2 : MonoBehaviour
     {
         if (outro.CompareTag("Player"))
         {
-            outro.GetComponent<Character>().life -= 2;
+            outro.GetComponent<Character>().PlayerDamage(1);
         }
     }
 }
