@@ -9,13 +9,9 @@ public class AddHeart : MonoBehaviour
     {
         if (outro.CompareTag("Player"))
         {
-            if (outro.GetComponent<Character>().life < 100)
-            {
-                outro.GetComponent<PlayerController>().audioSource.PlayOneShot(outro.GetComponent<PlayerController>().heartSound,0.3f);
-                outro.GetComponent<Character>().AddHeart(5);
-                Destroy(gameObject);
-
-            }
+             outro.GetComponent<PlayerController>().audioSource.PlayOneShot(outro.GetComponent<PlayerController>().heartSound,0.3f);
+             outro.GetComponent<Character>().AddHeart(1);
+             Destroy(gameObject); 
         }
     }
 }

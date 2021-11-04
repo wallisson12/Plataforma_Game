@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 8670213762490834742}
   - component: {fileID: 8670213762490834736}
   - component: {fileID: 8670213762490834739}
-  - component: {fileID: 1315942013152723996}
+  - component: {fileID: 9049236163990370435}
   m_Layer: 9
   m_Name: Bat
   m_TagString: Enemy
@@ -204,9 +204,11 @@ MonoBehaviour:
   life: 1
   skin: {fileID: 8670213762047372920}
   Cam: {fileID: 0}
-  HealthBar: {fileID: 0}
+  HealthCount: {fileID: 0}
   DashBar: {fileID: 0}
---- !u!82 &1315942013152723996
+  bossBattle: {fileID: 0}
+  youWin: {fileID: 0}
+--- !u!82 &9049236163990370435
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,7 +229,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.9
-  MaxDistance: 9.39
+  MaxDistance: 9.45
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -262,7 +264,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.843
       inSlope: 0
       outSlope: 0
       tangentMode: 0

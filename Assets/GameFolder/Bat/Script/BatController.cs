@@ -7,13 +7,7 @@ public class BatController : MonoBehaviour
 
     public Transform player;
     public float attackTime;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+  
     void Update()
     {
         if (GetComponent<Character>().life <= 0)
@@ -29,16 +23,16 @@ public class BatController : MonoBehaviour
         if (Vector2.Distance(transform.position,player.GetComponent<CapsuleCollider2D>().bounds.center) > 0.4f)
         {
             attackTime = 0;
-            transform.position = Vector2.MoveTowards(transform.position, player.GetComponent<CapsuleCollider2D>().bounds.center, 1.5f * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.GetComponent<CapsuleCollider2D>().bounds.center, 2f * Time.deltaTime);
         }
         else
         {
             attackTime = attackTime + Time.deltaTime;
 
-            if (attackTime >= 0.5f)
+            if (attackTime >= 0.5f && player.GetComponent<Character>().life != 0)
             {
                 attackTime = 0;
-                player.GetComponent<Character>().PlayerDamage(5);
+                player.GetComponent<Character>().PlayerDamage(1);
             }
         }
     }

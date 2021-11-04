@@ -30,7 +30,10 @@ public class PlayerController : MonoBehaviour
     public AudioClip attack2Sound;
     public AudioClip damageSound;
     public AudioClip heartSound;
+    public AudioClip gameover;
 
+    public Transform gameOverScreen;
+    public Transform pauseScreen;
 
 
     void Start()
@@ -51,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
+        
         //Coleta o nome da scene atual
         if (!currentLevel.Equals(SceneManager.GetActiveScene().name))
         {
@@ -59,19 +62,38 @@ public class PlayerController : MonoBehaviour
             transform.position = GameObject.FindGameObjectWithTag("Spawn").transform.position;
         }
 
+        //Pause Menu
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseScreen.GetComponent<Pause>().enabled = !pauseScreen.GetComponent<Pause>().enabled;
+        }
 
         //Morte
         if (GetComponent<Character>().life <= 0)
         {
+            if (GetComponent<Character>().Cam.GetComponent<AudioSource>().clip != gameover)
+            {
+                GetComponent<Character>().Cam.GetComponent<AudioSource>().clip = gameover;
+                GetComponent<Character>().Cam.GetComponent<AudioSource>().PlayOneShot(gameover,1f);
+            }
+
+            gameOverScreen.GetComponent<GameOver>().enabled = true;
             rb.simulated = false;
             this.enabled = false;
+
         }
 
+
+        //Pulo Personagem
+        Jump();
+
+        //Dash
+        Dash();
 
         //Combos e CoolDown
         comboTime = comboTime + Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Z) && comboTime > 0.5f)
+        if (Input.GetKeyDown(KeyCode.X) && comboTime > 0.5f)
         {
             //Para nao deslizar enquanto bate
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
@@ -97,7 +119,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Para nao deslizar enquanto bate
-        if (!Input.GetKeyDown(KeyCode.Z))
+        if (!Input.GetKeyDown(KeyCode.X))
         {
             rb.constraints = RigidbodyConstraints2D.None;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -114,8 +136,8 @@ public class PlayerController : MonoBehaviour
         }else
         {
             skin.GetComponent<Animator>().SetBool("PlayerRun",false);
-
-        }       
+            
+        }
 
     }
 
@@ -127,32 +149,48 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        
-        //Pulo Personagem
-        canJump = Physics2D.OverlapCircle(floorCollider.position,radius,floorLayer);
+    }
 
-        if (Input.GetButtonDown("Jump") && canJump)
+    public void Jump()
+    {
+        //Pulo Personagem
+        canJump = Physics2D.OverlapCircle(floorCollider.position, radius, floorLayer);
+
+        if (Input.GetKeyDown(KeyCode.Z) && canJump)
         {
             skin.GetComponent<Animator>().Play("PlayerJump", -1);
             rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(0,980f));
+            rb.AddForce(new Vector2(0, 980f));
         }
-
-        //Dash
-        dashTime = dashTime + Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.X) && dashTime > 1)
-        {
-            audioSource.PlayOneShot(dashSound,0.2f);
-
-            skin.GetComponent<Animator>().Play("PlayerDash",-1);
-            rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(skin.localScale.x * 600f,0));
-            dashTime = 0;
-        }
-
-
     }
 
+    public void Dash()
+    {
+        //Dash
+        dashTime = dashTime + Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.C) && dashTime > 1)
+        {
+            audioSource.PlayOneShot(dashSound, 0.2f);
+
+            skin.GetComponent<Animator>().Play("PlayerDash", -1);
+            rb.velocity = Vector2.zero;
+            rb.gravityScale = 0f;
+            Invoke("RestoreGravity",0.3f);
+            rb.AddForce(new Vector2(skin.localScale.x * 600f, 0));
+            dashTime = 0;
+        }
+    }
+
+    public void DestroyPlayer()
+    {
+        Destroy(transform.gameObject);
+    }
+
+    void RestoreGravity()
+    {
+        rb.gravityScale = 6f;
+    }
 
      //Visualiza o tamanho do circle
     private void OnDrawGizmosSelected()

@@ -23,17 +23,24 @@ public class BearTrap : MonoBehaviour
             outro.transform.position = transform.position;
             outro.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-            outro.GetComponent<Character>().PlayerDamage(1);
+            outro.GetComponent<Character>().PlayerDamage(2);
             outro.GetComponent<PlayerController>().skin.GetComponent<Animator>().SetBool("PlayerRun", false);
             outro.GetComponent<PlayerController>().enabled = false;
 
             GetComponent<BoxCollider2D>().enabled = false;
             Invoke("RealeasePlayer",1);
+            Invoke("RestTrap",3);
         }
     }
 
     void RealeasePlayer()
     {
         player.GetComponent<PlayerController>().enabled = true;
+    }
+
+    void RestTrap()
+    {
+        GetComponent<BoxCollider2D>().enabled = true;
+        GetComponentInChildren<Animator>().Play("ResetBertrap", -1);
     }
 }

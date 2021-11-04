@@ -13,17 +13,18 @@ public class KeeperController : MonoBehaviour
     public AudioClip die;
 
     public bool goRight;
-    // Start is called before the first frame update
+
+    public int  lifeAtual;
+
     void Start()
     {
-        
+        lifeAtual = GetComponent<Character>().life;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (GetComponent<Character>().life <= 0)
         {
+            GetComponent<Character>().life = 0;
             audioSource.PlayOneShot(die,0.3f);
             GetComponent<CapsuleCollider2D>().enabled = false;
             keeperRange.GetComponent<CircleCollider2D>().enabled = false;
@@ -31,6 +32,13 @@ public class KeeperController : MonoBehaviour
             Destroy(gameObject,3f);
 
         }
+
+        if (lifeAtual != GetComponent<Character>().life)
+        {
+            lifeAtual = GetComponent<Character>().life;
+            skin.GetComponent<Animator>().Play("KeeperDamage",1);
+        }
+
         if (skin.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("KeeperAttack"))
         {
             return;

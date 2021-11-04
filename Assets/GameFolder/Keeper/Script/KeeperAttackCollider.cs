@@ -9,7 +9,7 @@ public class KeeperAttackCollider : MonoBehaviour
     {
         if (outro.CompareTag("Player"))
         {
-            outro.GetComponent<Character>().PlayerDamage(10);
+            outro.GetComponent<Character>().PlayerDamage(1);
         }
     }
 }
