@@ -130,13 +130,13 @@ public class PlayerController : MonoBehaviour
         //Animacoes e Flip
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
+            rb.bodyType = RigidbodyType2D.Dynamic;
             skin.localScale = new Vector3(Input.GetAxisRaw("Horizontal"),1,1);
             skin.GetComponent<Animator>().SetBool("PlayerRun",true);
 
         }else
         {
-            skin.GetComponent<Animator>().SetBool("PlayerRun",false);
-            
+            skin.GetComponent<Animator>().SetBool("PlayerRun",false);     
         }
 
     }
@@ -158,6 +158,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Z) && canJump)
         {
+            rb.bodyType = RigidbodyType2D.Dynamic;
             skin.GetComponent<Animator>().Play("PlayerJump", -1);
             rb.velocity = Vector2.zero;
             rb.AddForce(new Vector2(0, 980f));
@@ -172,7 +173,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C) && dashTime > 1)
         {
             audioSource.PlayOneShot(dashSound, 0.2f);
-
+            rb.bodyType = RigidbodyType2D.Dynamic;
             skin.GetComponent<Animator>().Play("PlayerDash", -1);
             rb.velocity = Vector2.zero;
             rb.gravityScale = 0f;
@@ -198,5 +199,5 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(floorCollider.position,0.3f);
     }
-
+    
 }
