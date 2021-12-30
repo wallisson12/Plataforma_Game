@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         
-        //Coleta o nome da scene atual
+        //Coleta o nome da scene atual e da spawn em um objeto
         if (!currentLevel.Equals(SceneManager.GetActiveScene().name))
         {
             currentLevel = SceneManager.GetActiveScene().name;

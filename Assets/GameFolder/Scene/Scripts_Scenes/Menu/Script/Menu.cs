@@ -7,17 +7,23 @@ public class Menu : MonoBehaviour
 {
    public void NewGame(string name)
     {
-        SceneManager.LoadScene(name);
+        StartCoroutine(chamaScene(name));
     }
 
    public void CreditsGame(string name)
     {
-        SceneManager.LoadScene(name);
+        StartCoroutine(chamaScene(name));
     }
 
 
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator chamaScene(string nome)
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(nome);
     }
 }

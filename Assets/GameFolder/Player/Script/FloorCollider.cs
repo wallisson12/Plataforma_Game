@@ -31,6 +31,7 @@ public class FloorCollider : MonoBehaviour
 
     }
 
+    //Escada
     void OnTriggerStay2D(Collider2D outro)
     {
         if (outro.gameObject.name.Equals("Plataforma1"))
@@ -42,12 +43,13 @@ public class FloorCollider : MonoBehaviour
 
     }
 
-    private void OnTriggerExit2D(Collider2D outro)
+    void OnTriggerExit2D(Collider2D outro)
     {
         if (outro.gameObject.name.Equals("Plataforma") ||
             outro.gameObject.name.Equals("Plataforma1"))
         {
             player.transform.parent = null;
+            DontDestroyOnLoad(player.gameObject);
         }
     }
 }
