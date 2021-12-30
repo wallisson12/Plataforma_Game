@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour
 
     IEnumerator chamaScene(string nome)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(nome);
     }
 }
