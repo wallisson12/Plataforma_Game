@@ -3,7 +3,7 @@
 <img src="https://img.itch.zone/aW1nLzc1MTIwNTIucG5n/original/Bl8%2FRz.png">
 
 <a href="https://wallisson-de-jesus.itch.io/pong-master">
- <img src="https://o.remove.bg/downloads/a49079ae-bd71-4fcf-bfc0-1f779a465f6e/logotipo-do-elemento-sinal-%C3%ADcone-bot%C3%A3o-jogo-no-vermelho-e-na-cor-ouro-fundo-branco-134798003-removebg-preview.png" width="100" height="100"></img>
+ <img src="https://o.remove.bg/downloads/a49079ae-bd71-4fcf-bfc0-1f779a465f6e/logotipo-do-elemento-sinal-%C3%ADcone-bot%C3%A3o-jogo-no-vermelho-e-na-cor-ouro-fundo-branco-134798003-removebg-preview.png" width="200" height="100"></img>
 </a>
  
 <h3>Descrição:</h3>
