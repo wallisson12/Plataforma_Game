@@ -1,4 +1,4 @@
-<h3>The Castel Of Liberty</h3>
+<h3>The Castle Of Liberty</h3>
 <br>
 <img src="https://img.itch.zone/aW1nLzc1MTIwNTIucG5n/original/Bl8%2FRz.png">
 
