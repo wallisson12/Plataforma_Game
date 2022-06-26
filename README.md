@@ -2,8 +2,9 @@
 <br>
 <img src="https://img.itch.zone/aW1nLzc1MTIwNTIucG5n/original/Bl8%2FRz.png">
 
+
 <a href="https://wallisson-de-jesus.itch.io/the-castel-of-liberty">
- <img src="" width="200" height="100"></img>
+ <img src="https://o.remove.bg/downloads/80e1d85f-0d2a-438f-b615-9c04dc8256c7/13n58PIC8tNdqa7cup4sc_PIC2018.png_300-removebg-preview.png" width="150" height="150"></img>
 </a>
  
 <h3>Descrição:</h3>
