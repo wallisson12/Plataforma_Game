@@ -4,7 +4,7 @@
 
 
 <a href="https://wallisson-de-jesus.itch.io/the-castel-of-liberty">
- <img src="https://o.remove.bg/downloads/80e1d85f-0d2a-438f-b615-9c04dc8256c7/13n58PIC8tNdqa7cup4sc_PIC2018.png_300-removebg-preview.png" width="150" height="150"></img>
+ <img src="https://cdn.icon-icons.com/icons2/1147/PNG/512/1486486316-arrow-film-movie-play-player-start-video_81236.png" width="50" height="50"></img>
 </a>
  
 <h3>Descrição:</h3>
