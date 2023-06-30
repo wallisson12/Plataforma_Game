@@ -1,6 +1,6 @@
 <h3>The Castle Of Liberty</h3>
 <br>
-<img src="https://img.itch.zone/aW1nLzc1MTIwNTIucG5n/original/Bl8%2FRz.png">
+<img src="https://github.com/wallisson12/Plataforma_Game/blob/main/capa.png?raw=true">
 
 <h3><p><b>PlayGame</b></p></h3>
 <a href="https://wallisson-de-jesus.itch.io/the-castel-of-liberty">
