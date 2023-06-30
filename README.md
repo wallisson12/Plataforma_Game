@@ -25,7 +25,7 @@
   
   <b>Wallisson De Jesus Campos</b>
   
-  <p> Portifólio: https://wallisson-de-jesus.itch.io ](https://www.behance.net/wallissondejesus</p>
+  <p> Portifólio: https://www.behance.net/wallissondejesus </p>
   <p> Linkedin: https://www.linkedin.com/in/wallissonjesus/ </p>
   <p> Email: wallisson_wjc@outlook.com.br </p>
   
