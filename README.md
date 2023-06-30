@@ -8,10 +8,10 @@
 </a>
  
 <h3>Descrição:</h3>
-The Castle Of Liberty é um jogo de plataforma 2D, que se passa em um castelo assombrado por uma criatura que tem causado medo nos aldeões. Explore locais com vários desafios, progredindo e desenvolvendo suas habilidades, para derrotar inimigos e passar de obstáculos, se não acabará morto.
-
-<h3>Controles</h3>
-<table><tbody><tr><td class="text-center"><strong>&nbsp;Teclas</strong></td><td class="text-center"><strong>Ações</strong></td></tr><tr><td class="text-center">Setas</td><td>Movimentação</td></tr><tr><td class="text-center">X</td><td>Ataque</td></tr><tr><td class="text-center">Z</td><td>Pulo</td></tr><tr><td class="text-center">C</td><td>Dash</td></tr></tbody></table>
+- The Castle Of Liberty é um jogo de plataforma 2D, que se passa em um castelo assombrado por uma criatura que tem causado medo nos aldeões. Explore locais com vários desafios, progredindo e desenvolvendo suas habilidades, para derrotar inimigos e passar de obstáculos, se não acabará morto.
+<br>
+<br>
+- Nesse projeto trabalhei como Programador e Game Designer, utilizei o padrão de projeto, Singleton, para fazer a a persistência do player nas transições de cenas.
 
 <h3>Tecnologias Utilizadas</h3>
   
